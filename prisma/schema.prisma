@@ -11,6 +11,8 @@ model User {
   id           Int            @id @default(autoincrement())
   passwordHash String
   email        String         @unique
+  firstName     String
+  lastName     String
   role         Role
   bloodGroup   BloodGroup?
   gender       Gender?
@@ -51,8 +53,8 @@ model Notification {
 }
 
 enum Role {
-  donor
-  admin
+  DONOR
+  ADMIN
 }
 
 enum BloodGroup {
